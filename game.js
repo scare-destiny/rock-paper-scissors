@@ -4,12 +4,13 @@ const ITEMS = ["rock", "paper", "scissors"];
 const MAX_ROUNDS = 5;
 let playerScore = 0;
 let computerScore = 0;
+let gameDraw = 0;
 
 function declareWinner() {
-	console.log(`Final score by player ${playerScore}. Computer ${computerScore}`);
+	console.log(`Final score by player: ${playerScore}. Computer: ${computerScore} Tie: ${gameDraw}`);
 	playerScore > computerScore ? console.log('Player wins the game!')
 		: playerScore === computerScore ? console.log("Game Tie :(")
-		: console.log("Computer wins :(((");
+			: console.log("Computer wins :(((");
 }
 
 function game() {
@@ -28,14 +29,13 @@ function playRound(playerSelection, computerSelection) {
 	console.log(`Player: ${playerSelection}, Computer: ${computerSelection}`);
 
 	if (!validateSelection(playerSelection)) {
-		alert(`Item ${playerSelection} doesn't exist, aborting game`);
-		return;
+		alert(`Item ${playerSelection} doesn't exist, generating item value for player`);
+		playerSelection = ITEMS[Math.floor(Math.random() * ITEMS.length)] ;
 	}
 
 	let playerVictory = `Yay, you won this round: ${playerSelection} beats ${computerSelection}`;
 	let computerVictory = `Phew, you lost, computer wins. 
 	    ${computerSelection} is superior over ${playerSelection}`;
-	let gameDraw = "Tie :("
 	// TODO return string declaring the winner
 
 	if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -52,7 +52,7 @@ function playRound(playerSelection, computerSelection) {
 	}
 	else if (playerSelection === computerSelection) {
 		console.log(gameDraw);
-		return;
+		return gameDraw += 1;
 	}
 	else {
 		console.log(computerVictory);
