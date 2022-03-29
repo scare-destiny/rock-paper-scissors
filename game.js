@@ -31,7 +31,7 @@ function playRound(playerSelection, computerSelection) {
 	console.log(`Player: ${playerSelection}, Computer: ${computerSelection}`);
 
 	if (!validateSelection(playerSelection)) {
-		alert(`Item ${playerSelection} doesn't exist, generating item value for player`);
+		alert(`Item ${playerSelection} doesn't exist, generating random item for player`);
 		playerSelection = ITEMS[Math.floor(Math.random() * ITEMS.length)];
 	}
 
