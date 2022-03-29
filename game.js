@@ -6,12 +6,7 @@ let playerScore = 0;
 let computerScore = 0;
 let gameDraw = 0;
 
-function declareWinner() {
-	console.log(`Final score by player: ${playerScore}. Computer: ${computerScore} Tie: ${gameDraw}`);
-	playerScore > computerScore ? console.log('Player wins the game!')
-		: playerScore === computerScore ? console.log("Game Tie :(")
-			: console.log("Computer wins :(((");
-}
+
 
 function game() {
 	for (let i = 0; i < MAX_ROUNDS; i++) {
@@ -23,6 +18,13 @@ function game() {
 
 }
 
+function declareWinner() {
+	console.log(`Final score by player: ${playerScore}. Computer: ${computerScore} Tie: ${gameDraw}`);
+	playerScore > computerScore ? console.log('Player wins the game!')
+		: playerScore === computerScore ? console.log("Game Tie :(")
+		: console.log("Computer wins :(((");
+}
+
 
 function playRound(playerSelection, computerSelection) {
 	playerSelection = playerSelection.toLowerCase();
@@ -30,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
 
 	if (!validateSelection(playerSelection)) {
 		alert(`Item ${playerSelection} doesn't exist, generating item value for player`);
-		playerSelection = ITEMS[Math.floor(Math.random() * ITEMS.length)] ;
+		playerSelection = ITEMS[Math.floor(Math.random() * ITEMS.length)];
 	}
 
 	let playerVictory = `Yay, you won this round: ${playerSelection} beats ${computerSelection}`;
