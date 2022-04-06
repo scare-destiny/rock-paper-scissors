@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<link rel="stylesheet" href="./styles.css">
+	<script src="./game.js" defer></script>
 </head>
+
 <body>
-	<script src="./game.js"></script>
-	
+	<h1>Choose your weapon</h1>
+	<div id="btns-container">
+		<div class="item-container">
+			<img src="./media/PastelForkedIguanodon-max-1mb.gif">
+			<button value="rock">Rock</button>
+
+		</div>
+		<div class="item-container">
+			<img src="./media/giphy.gif">
+			<button value="paper">Paper</button>
+
+		</div>
+		<div class="item-container">
+			<img src="./media/cut-scissors.gif">
+			<button value="scissors">Scissors</button>
+
+		</div>
+	</div>
+	<div id="results-container">
+		<p id="chosen-items"></p>
+		<p id="running-score"></p>
+		<table>
+			<tr>
+				<th>Player</th>
+				<th>Computer</th>
+				<th>Draw</th>
+			</tr>
+			<tr>
+				<td id="player">0</td>
+				<td id="computer">0</td>
+				<td id="draw">0</td>
+			</tr>
+		</table>
+	</div>
+	<audio src="./media/2022-03-22_-_Age_Of_Mythology_-_www.FesliyanStudios.com.mp3" id="soundtrack" autoplay></audio>
 </body>
+
 </html>
