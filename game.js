@@ -1,5 +1,3 @@
-
-
 const ITEMS = ["rock", "paper", "scissors"];
 const MAX_ROUNDS = 5;
 let gameScore = [0, 0, 0]

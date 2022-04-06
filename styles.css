@@ -1,5 +1,5 @@
 body {
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-family: Impact, Copperplate, Papyrus, fantasy;
 }
 
 
@@ -12,6 +12,10 @@ h1 {
 	justify-content: center;
 	flex-wrap: wrap;
 
+}
+
+#results-container {
+	margin-bottom: 20px;
 }
 
 .item-container {
