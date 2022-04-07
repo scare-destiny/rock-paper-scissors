@@ -1,6 +1,6 @@
 const ITEMS = ["rock", "paper", "scissors"];
 const MAX_ROUNDS = 5;
-let gameScore = [0, 0, 0]
+let gameScore = [0, 0]
 let currentRound = 0;
 
 
@@ -13,7 +13,7 @@ function declareWinner() {
 }
 
 function resetGlobals() {
-	gameScore = [0, 0, 0];
+	gameScore = [0, 0];
 	currentRound = 0;
 	document.getElementById('results-container').style.display = 'none';
 
@@ -37,7 +37,6 @@ function playRound(playerSelection, computerSelection) {
 		declareRoundWinner('player');
 	}
 	else if (playerSelection === computerSelection) {
-		gameScore[2] += 1;
 		declareRoundWinner('draw');
 	}
 	else {
@@ -47,14 +46,14 @@ function playRound(playerSelection, computerSelection) {
 	updateScore(gameScore);
 
 	currentRound += 1;
-	isFinalround(currentRound)
+	isVictory(gameScore)
 
 
 }
 
-function isFinalround(round) {
-	if (round === MAX_ROUNDS) {
-		declareWinner();
+function isVictory(array) {
+	if (array.includes(MAX_ROUNDS)) {
+		setTimeout(declareWinner, 100);
 	}
 	return;
 }
