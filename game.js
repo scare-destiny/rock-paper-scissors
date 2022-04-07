@@ -19,7 +19,6 @@ function resetGlobals() {
 
 };
 
-
 function playRound(playerSelection, computerSelection) {
 
 	displaySelection(playerSelection, computerSelection);
@@ -101,7 +100,6 @@ btns.forEach(element => {
 });
 
 
-
 function choosePlayer(event) {
 	if (isFirstRound(currentRound)) document.getElementById('results-container').style.display = 'block';
 	event.stopImmediatePropagation();
@@ -121,4 +119,4 @@ window.onload = () => {
 	console.log(`success ${audio}`);
 	audio.play();
 };
-// game();
+
